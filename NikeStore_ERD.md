@@ -1,32 +1,39 @@
----
-title: Nike Retailer
----
+```mermaid
+
 erDiagram
-PRODUCT }|--|{ CUSTOMER : has
-PRODUCT }
+
+PRODUCT {
   string productName FK
   string productID PK
   string quantity
   string ratings
   string productAvailability
+
 }
-CUSTOMER }|--|| SALE : makes
-CUSTOMER }
-  string customerId PK
-  string DOB
-  string firstName
-  string lastName
-  string gender
-  string emailAddress
-  string purchaseHistory
+
+CUSTOMER {
+        string customerId PK
+        string DOB
+        string firstName
+        string lastName
+        string gender
+        string emailAddress
+        string purchaseHistory
 }
-SALE }|--|{ INVENTORY : needs
-SALE }
+
+SALE {
   string productName FK
   string productInformation
   string saleId PK
 }
-INVENTORY one or more SALE : needs
+
+INVENTORY {
+  string productId PK
+  string inventoryId FK
+  string stockStutus
+} 
+```
+
 
 ## Brief Description of Entitities and their Relationships:
 
